@@ -11,9 +11,8 @@ var MemoryStore = function(successCallback, errorCallback) {
     }
 	var obj = this;
 	this.getEvents=function(callback){
-		$.getJSON("http://www.jivinjari.com/?json=events/get_upcoming_events&callback=?",'',function(data){
-			obj.jivinjari_events=JSON.parse(data, function (key, value) {
-				console.log( key+':'+value);
+		$.getJSON("http://jivinjari.com/?json=events/get_upcoming_events&callback=?",'',function(data){
+			obj.em_events=JSON.parse(data, function (key, value) {
 				var type;
 				if (value && typeof value === 'object') {
 					type = value.type;
@@ -35,33 +34,33 @@ var MemoryStore = function(successCallback, errorCallback) {
 		console.log( "memory:::saving user");
 	};
     this.findByName = function(searchKey, callback) {
-        var jivinjari_events = this.jivinjari_events.filter(function(element){
+        var em_events = this.em_events.filter(function(element){
             var name = element.event_name;
             return name.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
         });
-        callLater(callback, jivinjari_events);
+        callLater(callback, em_events);
     };    
     this.findCurrentEvents = function(callback) {
-		//console.log('findCurrentEvents'+ this.jivinjari_events);
+		//console.log('findCurrentEvents'+ this.em_events);
 		
-		        callLater(callback, this.jivinjari_events);
+		        callLater(callback, this.em_events);
 
     };    
 	this.listAll = function(callback) {
-        callLater(callback, this.jivinjari_events);
+        callLater(callback, this.em_events);
     };
 
     this.findById = function(id, callback) {
-        var jivinjari_events = this.jivinjari_events;
+        var em_events = this.em_events;
         var j_event = null;
-        var l = jivinjari_events.length;
+        var l = em_events.length;
         for (var i=0; i < l; i++) {
 		
 
-            if (jivinjari_events[i].event_id == id) {
-		console.log("NAME:"+jivinjari_events[i].event_name);
-		console.log("DESC:"+jivinjari_events[i].post_content);
-		j_event = jivinjari_events[i];
+            if (em_events[i].event_id == id) {
+		console.log("NAME:"+em_events[i].event_name);
+		console.log("DESC:"+em_events[i].post_content);
+		j_event = em_events[i];
                 break;
             }
         }

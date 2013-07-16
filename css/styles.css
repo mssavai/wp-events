@@ -12,7 +12,12 @@ body {
     overflow: hidden;
     position: relative;
 }
-
+#wrapper{
+margin: 5px;
+}
+.current_events-list li{
+	text-transform:capitalize;
+}
 .header {
     background: #666;
     -webkit-background-size: 1px 44px;

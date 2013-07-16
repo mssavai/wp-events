@@ -55,7 +55,7 @@ var app = {
 		var self = this;
 		this.signedon=true;
 		this.bookingURL = /^#booking\/(\d{1,})/;
-		this.detailsURL = /^#jivinjari_events\/(\d{1,})/;
+		this.detailsURL = /^#em_events\/(\d{1,})/;
 		
 		this.store = new MemoryStore(function() {
 			self.route();

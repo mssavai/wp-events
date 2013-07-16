@@ -3,7 +3,7 @@ var LoginView=function(store){
 	this.user;
 	this.checkSignOn=function(){
 		checksignonobj=this;
-		$.getJSON("http://www.jivinjari.com/?json=events/checksignon&callback=?",'',function (data){
+		$.getJSON("http://localhost/simnew/?json=events/checksignon&callback=?",'',function (data){
 			checksignonobj.user=parseJSON(data);
 		});
 		return validateUserLogin();
@@ -38,7 +38,7 @@ var LoginView=function(store){
 			var p = $(".password", form).val();	
 			$.ajax({
 				type: 'POST',
-				url:"http://www.jivinjari.com/?json=events/signon",
+				url:"http://localhost/simnew/?json=events/signon",
 				data:{log:u,pwd:p},
 				dataType: "json",
 				async:true,

@@ -16,8 +16,8 @@ var HomeView = function(store) {
 		return this;
 	};
 	this.findByName = function() {
-		store.findByName($('.search-key').val(), function(jivinjari_events) {
-			$('.jivinjari_events-list').html(HomeView.liTemplate(jivinjari_events));
+		store.findByName($('.search-key').val(), function(em_events) {
+			$('.em_events-list').html(HomeView.liTemplate(em_events));
 			if (self.iscroll) {
 				console.log('Refresh iScroll');
 				self.iscroll.refresh();
@@ -30,8 +30,8 @@ var HomeView = function(store) {
 
 	this.findCurrentEvents = function(){			
 		console.log('executing Homeview.findCurrentEvents');
-		store.findCurrentEvents(function(jivinjari_events) {
-			$('.current_events-list').html(HomeView.liTemplate(jivinjari_events));
+		store.findCurrentEvents(function(em_events) {
+			$('.current_events-list').html(HomeView.liTemplate(em_events));
 			if (self.iscroll) {
 				console.log('Refresh iScroll');
 				self.iscroll.refresh();
