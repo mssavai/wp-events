@@ -26,7 +26,7 @@ var BookingView = function(store,event) {
 
 	}
 	this.sendBooking=function(booking_data){
-				$.getJSON("http://localhost/simnew/?json=events/booking&callback=?",booking_data,function(data){
+				$.getJSON("http://www.jivinjari.com/?json=events/booking&callback=?",booking_data,function(data){
 			var booking_results=JSON.parse(data, function (key, value){
 					var type;
 					if (value && typeof value === 'object') {

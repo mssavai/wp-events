@@ -24,7 +24,7 @@ var LocalStorageStore = function(successCallback, errorCallback) {
 //public methods
 	this.downloadEvents=function(callback){
 		var self=this;
-		$.getJSON("http://localhost/simnew/?json=events/get_upcoming_events&callback=?",'',function(data){
+		$.getJSON("http://www.jivinjari.com/?json=events/get_upcoming_events&callback=?",'',function(data){
 			var em_events=self.parseJSON(data);
 			window.localStorage.setItem("em_events", JSON.stringify(em_events));
 			callLater(callback);		

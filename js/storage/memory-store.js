@@ -11,7 +11,7 @@ var MemoryStore = function(successCallback, errorCallback) {
     }
 	var obj = this;
 	this.getEvents=function(callback){
-		$.getJSON("http://jivinjari.com/?json=events/get_upcoming_events&callback=?",'',function(data){
+		$.getJSON("http://localhost/simnew/?json=events/get_upcoming_events&callback=?",'',function(data){
 			obj.em_events=JSON.parse(data, function (key, value) {
 				var type;
 				if (value && typeof value === 'object') {
@@ -40,9 +40,7 @@ var MemoryStore = function(successCallback, errorCallback) {
         });
         callLater(callback, em_events);
     };    
-    this.findCurrentEvents = function(callback) {
-		//console.log('findCurrentEvents'+ this.em_events);
-		
+    this.findCurrentEvents = function(callback) {		
 		        callLater(callback, this.em_events);
 
     };    

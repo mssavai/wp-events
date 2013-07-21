@@ -7,7 +7,7 @@ var UserView=function(store){
 	this.validateUserLogin = function(){
 		var username=$("#username").val();
 		var password=$("#password").val();
-		$.getJSON("http://localhost/simnew/?json=events/get_user_details&username="+username+"&password="+password+"&callback=?",function(data){
+		$.getJSON("http://www.jivinjari.com/?json=events/get_user_details&username="+username+"&password="+password+"&callback=?",function(data){
 			user=self.parseJSON(data);
 			console.log("returned user "+user);
 			if(user.signedon){

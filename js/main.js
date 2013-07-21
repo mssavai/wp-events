@@ -52,7 +52,7 @@ var app = {
 		  var self = this;
 		  self.store.getRegisteredUser(function(user){
 		  if((user!=null)){
-				$.getJSON("http://localhost/simnew/?json=events/validateuser&username="+user.username+"&password="+user.password+"&callback=?",function(data){
+				$.getJSON("http://www.jivinjari.com/?json=events/validateuser&username="+user.username+"&password="+user.password+"&callback=?",function(data){
 					var validateduser=JSON.parse(data);
 					if(validateduser.isRegistered){
 						self.hasRegisteredUser=true;
