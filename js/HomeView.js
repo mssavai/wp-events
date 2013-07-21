@@ -1,11 +1,11 @@
 var HomeView = function(store) {
 	this.getEvents=function(){
-		store.getEvents(function(){
+		store.downloadEvents(function(){
 			$('.btngetevents').trigger('custom');
 			console.log('trigger eventsloaded');
 		});
 	};
-	this.render = function(reloadEvents) {
+	this.render = function(reloadEvents){
 		if(!reloadEvents){
 			this.el.html(HomeView.template());
 			this.getEvents();
@@ -30,7 +30,7 @@ var HomeView = function(store) {
 
 	this.findCurrentEvents = function(){			
 		console.log('executing Homeview.findCurrentEvents');
-		store.findCurrentEvents(function(em_events) {
+		store.listAll(function(em_events){
 			$('.current_events-list').html(HomeView.liTemplate(em_events));
 			if (self.iscroll) {
 				console.log('Refresh iScroll');

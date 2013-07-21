@@ -6,9 +6,10 @@
 <body>
    
 <script id="login-tpl" type="text/x-handlebars-template">
+	<div class='header'><h1>Sign into Jivinjari</h1></div>
 	<form  id='login-form' action='' method='post'>
-	<div>Username <input class='username' name='log' type="text"/></div>
-    <div>Password <input class='password' name='pwd' type="password"/></div>
+	<div>Username <input id='username' name='log' type="text"/></div>
+    <div>Password <input id='password' name='pwd' type="password"/></div>
    <div> <input class='submitbutton' type="button" value="Sign In" /></div>
 	</form>
 </script>
@@ -72,8 +73,8 @@
 <script src="lib/handlebars.js"></script>
 <script src="phonegap.js"></script>
 <script src="lib/jquery-1.8.2.min.js"></script>
-<script src="js/storage/memory-store.js"></script>
-<script src="js/LoginView.js"></script>
+<script src="js/storage/ls-store.js"></script>
+<script src="js/UserView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="js/EventView.js"></script>
 <script src="js/BookingView.js"></script>
